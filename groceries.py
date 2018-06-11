@@ -38,3 +38,26 @@ departments.sort()
 print("------------------")
 print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
 print("------------------")
+
+#9Print the name of each unique department.
+
+for d in departments:
+    print(" ... " + d.title()+" (" + "................" +" Products" + ")")
+
+print("HERE IS A BREAK")
+
+def products_belonging_to(dept_name):
+    new_products = []
+
+    for p in products:
+        if p["department"] == dept_name:
+            new_products.append(p)
+
+    return new_products #TODO: LOOK UP ALL PRODUCTS BELONGING TO THE DEPT
+
+for d in departments:
+    associated_products = products_belonging_to(d)
+    label = " products)"
+    if len(associated_products) ==1:
+        label = " product)"
+    print(" ... " + d.title() + " (" + str(len(associated_products)) + label )
