@@ -22,9 +22,10 @@ products = [
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
+def sort_by_name(p):
+    return p["name"]
+
+products = sorted(products, key=sort_by_name)
+
 for p in products:
-    print(p["name"])
-product_count_message = "THERE ARE "+str(len(products))+" PRODUCTS:"
-print("---------------")
-print(product_count_message)
-print("---------------")
+    print(" ... "  + p["name"])
